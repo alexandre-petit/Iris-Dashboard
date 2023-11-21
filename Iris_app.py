@@ -67,7 +67,7 @@ graph_data = data.copy()
 column = st.selectbox("Select a column to display",
                       tuple(graph_data.columns))
 
-if outliers:
+if outliers and column != 'species':
     for iris_specie in graph_data['species'].unique():
         sub_df = graph_data[graph_data['species'] == iris_specie].copy()
         left_df = graph_data[graph_data['species'] != iris_specie].copy()
